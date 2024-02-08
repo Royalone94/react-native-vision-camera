@@ -25,7 +25,8 @@ extension AVCaptureColorSpace {
       self = .sRGB
       return
     default:
-      throw EnumParserError.invalidValue
+      self = .sRGB
+      return
     }
   }
 
@@ -38,7 +39,7 @@ extension AVCaptureColorSpace {
     case .sRGB:
       return "srgb"
     default:
-      fatalError("AVCaptureDevice.Position has unknown state.")
+      return "srgb"
     }
   }
 }
